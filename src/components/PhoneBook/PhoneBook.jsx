@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Component } from 'react'
 import { Section } from 'components/Section';
 import { Form } from 'components/Form';
-import { Contacts } from './Contacts'
+import { ContactsList } from './Contacts'
 import shortid from "shortid";
 
 
@@ -22,12 +22,22 @@ export class PhoneBook extends Component{
       contacts: [...prevState.contacts, contact],
     }));
   };
+
+    getContacts = () => {
+    const { contacts } = this.state;
+    return contacts.map((contact) =>
+      contact.text
+    );
+  };
   
   render() {
+    const {contacts} = this.state;
+
     return (
       <Section title='PhoneBook'>
         <Form onSubmit={this.addContact}/>
         {/* <Contacts names={ this.state}/> */}
+        <ContactsList contacts={contacts}/>
       </Section>
     )}
 }
