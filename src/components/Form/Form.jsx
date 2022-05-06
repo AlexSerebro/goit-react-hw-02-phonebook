@@ -1,7 +1,7 @@
 import style from './Form.module.css'
 import PropTypes from 'prop-types';
 import { Component } from 'react'
-import { Input } from 'components/Input';
+
 
 
 export class Form extends Component{
@@ -27,6 +27,8 @@ export class Form extends Component{
     this.props.onSubmit(this.state.name, this.state.number);
     this.setState({ name: "", number:"" });
   };
+
+  
 
   render() {
     return (

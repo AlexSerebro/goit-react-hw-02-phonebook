@@ -1,10 +1,11 @@
 import style from "./Contacts.module.css";
 
-export const ContactsList = ({ contacts }) => {
+
+export const Contacts = ({ contacts }) => {
   return (
     <>
-    <p className={style.text}>Contacts</p>
-    <ul className={style.list}>
+      <div className={style.wraper}>
+        <ul className={style.list}>
       {contacts.map(({ id, name, number}) => (
         <li
           key={id}
@@ -15,6 +16,8 @@ export const ContactsList = ({ contacts }) => {
         </li>
       ))}
       </ul>
+      </div>
+    
     </>
   );
 };
