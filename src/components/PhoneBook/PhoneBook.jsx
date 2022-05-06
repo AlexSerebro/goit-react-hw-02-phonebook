@@ -16,9 +16,7 @@ const CONTACT_LIST = [
 
 export class PhoneBook extends Component{
   state = {
-  contacts: [...CONTACT_LIST],
-    name: '',
-    number: '',
+    contacts: [...CONTACT_LIST],
     filter: '',
   }
 
