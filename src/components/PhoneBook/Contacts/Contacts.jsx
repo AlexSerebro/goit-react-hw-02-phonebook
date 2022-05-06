@@ -3,14 +3,15 @@ import style from "./Contacts.module.css";
 export const ContactsList = ({ contacts }) => {
   return (
     <>
-    <p className="text">Contacts</p>
-    <ul className="contacts">
-      {contacts.map(({ id, name}) => (
+    <p className={style.text}>Contacts</p>
+    <ul className={style.list}>
+      {contacts.map(({ id, name, number}) => (
         <li
           key={id}
-          className={style.list}
+          className={style.list_item}
         >
-         {name}
+          <p className={style.item_text}>{name}:</p> 
+          <p className={style.item_text}>{number}</p>
         </li>
       ))}
       </ul>

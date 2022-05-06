@@ -1,0 +1,19 @@
+.text{
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  
+}
+.list{
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.list_item{
+  font-size: 20px;
+}
+
+.item_text{
+  display: inline;
+  padding-left: 10px;
+}

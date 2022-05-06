@@ -10,13 +10,16 @@ import shortid from "shortid";
 export class PhoneBook extends Component{
   state = {
   contacts: [],
-  name: ''
+    name: '',
+    number:'',
+  
   }
 
-  addContact= (text) => {
+  addContact= (text, number) => {
     const contact = {
       id: shortid.generate(),
-      name: text, //like text: text;
+      name: text, 
+      number: number,
      };
     this.setState((prevState) => ({
       contacts: [...prevState.contacts, contact],
