@@ -16,10 +16,19 @@
 
 .list_item{
   font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 
 }
 
 .item_text{
   display: inline;
   padding-left: 10px;
+}
+
+.button{
+  margin-left: 20px;
+  width: 50px;
+  height: 20px;
 }

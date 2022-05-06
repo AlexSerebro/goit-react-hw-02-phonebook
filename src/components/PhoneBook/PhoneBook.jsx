@@ -1,5 +1,4 @@
 import style from './PhoneBook.module.css'
-import PropTypes from 'prop-types';
 import { Component } from 'react'
 import { Section } from 'components/Section';
 import { Form } from 'components/Form';
@@ -18,10 +17,6 @@ export class PhoneBook extends Component{
   state = {
     contacts: [...CONTACT_LIST],
     filter: '',
-  }
-
-  getFormData = data => {
-
   }
 
   addContact = (name, number) => {
@@ -54,10 +49,14 @@ export class PhoneBook extends Component{
     );
   };
 
-
+    deleteContact = (contactId) => {
+    this.setState((prevState) => ({
+      contacts: prevState.contacts.filter((contact) => contact.id !== contactId),
+    }));
+  };
   
   render() {
-    const { contacts, filter } = this.state;
+    const { filter } = this.state;
     const vizibleContacts = this.getVisibleContacts();
 
     return (
@@ -65,12 +64,8 @@ export class PhoneBook extends Component{
         <Form onSubmit={this.addContact}/>
         <p className={style.text}>Contacts</p>
         <Filter value={filter} onChange={this.changeFilter} />
-        <Contacts contacts={vizibleContacts}/>
+        <Contacts contacts={vizibleContacts} onDeleteContact={this.deleteContact}/>
       </Section>
     )}
 }
 
-
-// Section.propTypes = {
-//   title: PropTypes.string.isRequired,
-// }
