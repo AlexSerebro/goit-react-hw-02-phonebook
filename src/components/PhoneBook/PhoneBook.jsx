@@ -20,10 +20,21 @@ export class PhoneBook extends Component{
     filter: '',
   }
 
-  addContact= (text, number) => {
+  getFormData = data => {
+
+  }
+
+  addContact = (name, number) => {
+    if (
+      this.state.contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase())
+    ) {
+      alert(`You have already had ${name} in your contacts`);
+      return;
+    }
+
     const contact = {
       id: shortid.generate(),
-      name: text, 
+      name: name, 
       number: number,
      };
     this.setState((prevState) => ({
